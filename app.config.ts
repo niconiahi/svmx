@@ -22,5 +22,24 @@ export default createApp({
         }),
       ],
     },
+    {
+      name: "clock",
+      type: "http",
+      handler: "./src/handlers/clock.ts",
+      base: "/clock",
+    },
+    {
+      name: "add-film",
+      type: "http",
+      handler: "./src/handlers/add-film.ts",
+      base: "/add-film",
+      plugins: () => [
+        svelte({
+          preprocess: [
+            vitePreprocess(),
+          ]
+        }),
+      ],
+    },
   ],
 });
